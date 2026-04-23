@@ -1,0 +1,6 @@
+Region	    Missing Pokémon
+Kanto/Johto	    Arbok, Flareon, Forretress
+Hoenn/Sinnoh	Roserade, Rotom, Rotom-Fan
+Unova	        Samurott, Watchog, Simisage, Simisear, Simipour, Garbodor, Zoroark, Stunfisk, Stunfisk-Galar
+Kalos/Alola	    Diggersby, Floette, Florges, Pangoro, Furfrou, Meowstic-M, Aromatisse, Slurpuff, Dedenne, Gourgeist, Gourgeist-Small, Gourgeist-Large, Avalugg-Hisui
+Galar/Paldea	Lycanroc-Midnight, Morpeko
