@@ -62,6 +62,8 @@ const PredictButton = styled.button`
 
   &:disabled {
     box-shadow: none;
+    color: gray;
+    background-color: rgba(255, 0, 0, 0.7);
     cursor: not-allowed;
   }
 
@@ -69,14 +71,4 @@ const PredictButton = styled.button`
     background-color: rgba(255, 0, 0, 0.75);
     transform: translateY(-2px);
   }
-
-  text-shadow: 
-    -1px -1px 0 #ffffff,  
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff,
-     0px -1px 0 #ffffff,
-     0px  1px 0 #ffffff,
-    -1px  0px 0 #ffffff,
-     1px  0px 0 #ffffff;
 `;

@@ -32,7 +32,7 @@ export const useLeadCalculator = (): UseLeadCalculatorReturn => {
         setError(null);
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/predict', {
+            const response = await fetch('/api/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -52,6 +52,7 @@ export const useLeadCalculator = (): UseLeadCalculatorReturn => {
 
         } catch (err: any) {
             console.error("couldn't fetch predictions:", err);
+            setError(err.message || "unexpected error occurred");
         } finally {
             setLoading(false);
         }
