@@ -12,10 +12,17 @@ const POKEAPI_MAP: Record<string, string> = {
     'tauros-paldea': 'tauros-paldea-combat-breed',
     'tauros-paldea-aqua': 'tauros-paldea-aqua-breed',
     'tauros-paldea-blaze': 'tauros-paldea-blaze-breed',
-    'meowstic-m': 'meowstic-male',
+    'meowstic': 'meowstic-male',
     'meowstic-f': 'meowstic-female',
-    'basculegion-m': 'basculegion-male',
+    'basculegion': 'basculegion-male',
     'basculegion-f': 'basculegion-female',
+    'aegislash': 'aegislash-shield',
+    'gourgeist': 'gourgeist-average',
+    'lycanroc': 'lycanroc-midday',
+    'mimikyu': 'mimikyu-disguised',
+    'morpeko': 'morpeko-full-belly',
+    'maushold': 'maushold-family-of-four',
+    'palafin': 'palafin-zero',
 };
 
 export const useRegulationMA = () => {

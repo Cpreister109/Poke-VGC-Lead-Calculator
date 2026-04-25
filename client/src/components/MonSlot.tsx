@@ -65,13 +65,19 @@ export const MonSlot: FC<MonSlotProps> = ({ index, predictionData, highlightColo
               ))}
             </TypesContainer>
           </PokemonDetails>
-          {percentage !== null && <Percentage>{percentage}%</Percentage>}
+          {percentage !== null && <Percentage value={percentage}>{percentage}%</Percentage>}
         </SlotContent>
       ) : (
         <EmptySlotText>Empty Slot</EmptySlotText>
       )}
     </SlotBox>
   );
+};
+
+const getSmoothColor = (percent: number | string | null) => {
+  const safePercent = Math.max(0, Math.min(100, Number(percent) || 0));
+  const hue = (safePercent / 100) * 120;
+  return `hsl(${hue}, 80%, 85%)`;
 };
 
 const SlotBox = styled.div<{ isActive: boolean; isDisabled: boolean; highlightColor: 'green' | 'red' | 'none' }>`
@@ -183,10 +189,10 @@ const TypeBadge = styled.span<{ type: string }>`
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 `;
 
-const Percentage = styled.span`
+const Percentage = styled.span<{ value: number | string | null }>`
   font-family: monospace;
   font-weight: bold;
-  background: #d1fae5;
+  background: ${(props) => getSmoothColor(props.value)};
   padding: 0.35rem 0.6rem;
   border-radius: 0.25rem;
   flex-shrink: 0;
