@@ -25,7 +25,7 @@ Model:
 - python3 -m venv .venv
 - source .venv/bin/activate
 - pip install -r requirements.txt
-- python3 train.py
+- python3 main.py
 ---
 ### Home:
 <img width="1512" height="864" alt="Screenshot 2026-04-28 at 11 02 36 AM" src="https://github.com/user-attachments/assets/63b29eba-0dfb-4aa4-b624-7b1f28948398" />
