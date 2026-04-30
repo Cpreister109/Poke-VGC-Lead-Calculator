@@ -15,7 +15,6 @@ def load_and_preprocess():
 
     processed_data = []
     for _, row in df.iterrows():
-        # parse strings
         p1_t = [pk.strip() for pk in str(row['P1_Team']).split(',')]
         p1_b = [pk.strip() for pk in str(row['P1_Brought']).split(',')]
         p2_t = [pk.strip() for pk in str(row['P2_Team']).split(',')]

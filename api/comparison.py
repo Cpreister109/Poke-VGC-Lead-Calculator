@@ -3,7 +3,7 @@ import math
 # holds models in memory
 MODEL_DATA = {}
 
-def load_models(filepath="pokemon_logic.lp"):
+def load_models(filepath='pokemon_logic.lp'):
     global MODEL_DATA
     try:
         with open(filepath, 'r') as f:
@@ -25,12 +25,12 @@ def load_models(filepath="pokemon_logic.lp"):
                             coeffs[k] = float(v)
                     
                     MODEL_DATA[pkmn] = {
-                        "intercept": intercept,
-                        "coeffs": coeffs
+                        'intercept': intercept,
+                        'coeffs': coeffs
                     }
-        print(f"Loaded {len(MODEL_DATA)} Pokemon models into memory.")
+        print(f'Loaded {len(MODEL_DATA)} Pokemon models into memory.')
     except FileNotFoundError:
-        print(f"{filepath} not found")
+        print(f'{filepath} not found')
 
 def sigmoid(z):
     # prevent extreme numbers
@@ -42,12 +42,12 @@ def predict_bring_probability(target_pokemon, all_12_pokemon):
         return None # skipped if not inlcuded in training
     
     model = MODEL_DATA[target_pokemon]
-    z = model["intercept"]
+    z = model['intercept']
     
     # add the weights of pokemon on the field
     for pkmn in all_12_pokemon:
-        if pkmn in model["coeffs"]:
-            z += model["coeffs"][pkmn]
+        if pkmn in model['coeffs']:
+            z += model['coeffs'][pkmn]
             
     return sigmoid(z)
 
@@ -57,16 +57,16 @@ def calculate_matchup(p1_team, p2_team):
     p1_predictions = {}
     for pkmn in p1_team:
         prob = predict_bring_probability(pkmn, all_12)
-        p1_predictions[pkmn] = round(prob * 100, 2) if prob is not None else "N/A"
+        p1_predictions[pkmn] = round(prob * 100, 2) if prob is not None else 'N/A'
         
     p2_predictions = {}
     for pkmn in p2_team:
         prob = predict_bring_probability(pkmn, all_12)
-        p2_predictions[pkmn] = round(prob * 100, 2) if prob is not None else "N/A"
+        p2_predictions[pkmn] = round(prob * 100, 2) if prob is not None else 'N/A'
         
     return {
-        "p1_percentages": p1_predictions,
-        "p2_percentages": p2_predictions
+        'p1_percentages': p1_predictions,
+        'p2_percentages': p2_predictions
     }
 
 load_models()
