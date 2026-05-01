@@ -3,7 +3,7 @@
 API:
 - clone this repo
 - cd Poke-VGC-Lead-Calculator/api
-- python3 -m venv .venv
+- python3.12 -m venv .venv
 - source .venv/bin/activate
 - pip install -r requirements.txt
 - python3 -m uvicorn api:app
@@ -22,7 +22,7 @@ Model:
 - This doesn't interact directly with the API or Client, only makes an .lp file to be moved to the API
 - Open new terminal
 - cd model
-- python3 -m venv .venv
+- python3.12 -m venv .venv
 - source .venv/bin/activate
 - pip install -r requirements.txt
 - python3 main.py
